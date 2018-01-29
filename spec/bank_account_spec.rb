@@ -14,4 +14,10 @@ describe BankAccount do
     expect(bank_account.balance).to eq(20.00)
   end
 
+  it "allows user to withdrawal money" do
+    bank_account = BankAccount.new
+    bank_account.deposit(20.00)
+    bank_account.withdrawal(10.00)
+    expect(bank_account.balance).to eq(10.00)
+  end
 end
