@@ -25,5 +25,6 @@ class BankAccount
     @transactions.push(debit)
   end
 
+  
 
 end
