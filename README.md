@@ -1,5 +1,7 @@
 # bank_tech_test
 
+[![Build Status](https://travis-ci.org/Xin00163/bank_tech_test.svg?branch=master)](https://travis-ci.org/Xin00163/bank_tech_test)
+
 #### User Stories ####
 ```
 As a User
