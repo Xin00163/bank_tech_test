@@ -12,4 +12,12 @@ describe Credit do
     it 'should show the date when the credit is made' do
       expect(subject.created_date.to_s).to eq(Time.now.strftime("%d/%m/%Y").to_s)
     end
+
+    it 'should have an amount' do
+      expect(subject.amount).to eq(20.00)
+    end
+
+    it 'should know the current_balance' do
+      expect(subject.current_balance).to eq(10.00)
+    end
 end
