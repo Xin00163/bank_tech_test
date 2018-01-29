@@ -19,6 +19,14 @@ So I can see which date I did the transactions
 I want to be able to see the dates for each transaction
 
 As a User
+So I can see the details of each transaction
+I want to be able to know the credit for each transaction
+
+As a User
+So I can see the details of each transaction
+I want to be able to know the debit for each transaction
+
+As a User
 So I can see my transactions on paper
 I want to be able to print the date, credit/debit amount and balance
 
