@@ -52,6 +52,13 @@ describe BankAccount do
 
     it "allows user to withdrawal money and automatically increase the transactions's number" do
       expect{ subject.withdrawal(debit_amount) }.to change{ subject.balance }.by(-10.00)
+      expect(subject.transactions.length).to eq(2)
     end
+
+    it "includes the debit transaction" do
+      subject.withdrawal(debit_amount)
+      expect(subject.transactions[1]).to eq(debit)
+    end
+
   end
 end
