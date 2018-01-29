@@ -1,4 +1,5 @@
 require "bank_account"
+require "printer"
 
 describe BankAccount do
   let(:credit_class) { double(:credit_class) }
@@ -7,8 +8,9 @@ describe BankAccount do
   let(:debit) { double("debit", debit_amount: -10.00, created_date: "29/01/2017") }
   let(:credit_amount) { 10.00 }
   let(:debit_amount) { 10.00 }
+  let(:printer) { double("printer") }
 
-  subject{ described_class.new(credit_class, debit_class) }
+  subject{ described_class.new(credit_class, debit_class, printer) }
 
   context "When creating a bank account" do
     it "have an initial balance" do
@@ -60,5 +62,15 @@ describe BankAccount do
       expect(subject.transactions[1]).to eq(debit)
     end
 
+    it 'will raise an error when the balance is less than the amount' do
+      expect { subject.withdrawal(20.00) }.to raise_error 'Insufficient funds'
+    end
+  end
+
+  describe "print statements" do
+    it "calls the printer to print the bank statement" do
+      expect(printer).to receive(:format)
+      subject.print_statement
+    end
   end
 end

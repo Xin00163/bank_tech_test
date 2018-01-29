@@ -14,7 +14,7 @@ describe Debit do
     end
 
     it 'should have an amount' do
-      expect(subject.amount).to eq(20.00)
+      expect(subject.amount).to eq(-20.00)
     end
 
     it 'should know the current_balance' do
