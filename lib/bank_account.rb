@@ -1,3 +1,6 @@
+require_relative 'credit'
+require_relative 'debit'
+
 class BankAccount
   attr_reader :balance, :transactions, :credit_class, :debit_class
 
@@ -12,10 +15,14 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
+    credit = credit_class.new(amount, @balance)
+    @transactions.push(credit)
   end
 
   def withdrawal(amount)
     @balance -= amount
+    debit = debit_class.new(amount, @balance)
+    @transactions.push(debit)
   end
 
 
