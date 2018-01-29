@@ -36,3 +36,5 @@ As a User
 So I can see previous transactions
 I want to be able to save the previous transactions in memory
 ```
+#### Irb demo ####
+![Imgur](https://i.imgur.com/aFo0dX8.png)
